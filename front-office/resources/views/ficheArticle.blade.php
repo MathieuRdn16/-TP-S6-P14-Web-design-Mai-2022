@@ -25,7 +25,6 @@
                         <?php echo $article->contenu ?>
                     </p>
                     <br>
-                   
                 </div>
             </div>
         </div>
