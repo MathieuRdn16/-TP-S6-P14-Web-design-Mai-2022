@@ -25,10 +25,7 @@
                         <?php echo $article->contenu ?>
                     </p>
                     <br>
-                    <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                       href="/modifArticle/{{$article->idarticle}}">
-                        <input type="button" class="px-5 py-3 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" value="Modification"/>
-                    </a>
+                   
                 </div>
             </div>
         </div>
