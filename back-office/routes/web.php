@@ -14,14 +14,15 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::middleware(['check_session'])->group(function () {
 Route::get('ajoutArticle',[ArticleController::class, 'ajoutArticlePage'])->name("pageAjoutArticle");
-Route::post('insertArticle',[ArticleController::class, 'ajoutArticle'])->name("AjoutArticle");
+Route::get('insertArticle',[ArticleController::class, 'ajoutArticle'])->name("AjoutArticle");
 Route::get('listeArticle',[ArticleController::class, 'liste'])->name("pageListeArticle");
 Route::get('/ficheArticle/{id}-{titre}',[ArticleController::class, 'fiche'])->name("ficheArticle");
 Route::get('modifArticle/{id}', [ArticleController::class, 'pageModif'])->name('modifArticle');
-Route::post('modificationArticle', [ArticleController::class, 'modification'])->name('modifierArticle');
+Route::get('modificationArticle', [ArticleController::class, 'modification'])->name('modifierArticle');
+});
+
 Route::get('/', [LoginController::class, 'loginPage'])->name('pageLogin');
 Route::post('login', [LoginController::class, 'login'])->name('login');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');

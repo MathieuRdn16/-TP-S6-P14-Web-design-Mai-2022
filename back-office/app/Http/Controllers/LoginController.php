@@ -25,6 +25,11 @@ class LoginController extends Controller
                 'error'=>$e->getMessage()
             ]);
         }
+        session(['idadmin' => $admin->idadmin]);
         return view('listeArticle',['listes'=>Article::all()]);
+    }
+    public function logout(){
+        session()->forget('idadmin');
+        return $this->loginPage();
     }
 }

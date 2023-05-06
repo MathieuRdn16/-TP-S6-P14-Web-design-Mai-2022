@@ -39,6 +39,7 @@ use Exception;
         $utilisateur=DB::selectOne("select * from admin where email='".$this->email."' and mdp='".$this->mdp."'");
         if($utilisateur==null)
             throw new Exception("Authentification incorrect");
+        $this->idadmin=$utilisateur->idadmin;
         $this->nom=$utilisateur->nom;
         $this->prenom=$utilisateur->prenom;
     }
