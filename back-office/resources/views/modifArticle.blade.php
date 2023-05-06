@@ -10,7 +10,8 @@
         >
             Modifier l'article
         </h2>
-        <form method="get" action="/modificationArticle">
+        <form method="post" action="/modificationArticle">
+            @csrf
             <input type="hidden" value="{{$article->idarticle}}" name="idart">
             <div
                 class="px-4 py-3 mb-4 bg-white rounded-lg shadow-md dark:bg-gray-800"
