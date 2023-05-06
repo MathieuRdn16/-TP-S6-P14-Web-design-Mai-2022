@@ -21,7 +21,7 @@
                 <h4
                     <strong >{{strtoupper($ls->Categorie->designation)}}: {{$ls->titre}}</strong>
                 </h4>
-                <p><img src="{{$ls->image}}" ></p>
+                <p><img src="{{$ls->image}}" alt="{{$ls->Categorie->designation}}"/></p>
                 <p class="text-gray-600 dark:text-gray-400">
                     {{$ls->resume}}
                 </p>

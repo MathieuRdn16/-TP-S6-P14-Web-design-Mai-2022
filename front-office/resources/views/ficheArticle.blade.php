@@ -20,8 +20,8 @@
                     class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         <strong >{{strtoupper($article->titre)}}</strong>
                     </h1>
-                    <img src="{{$article->image}}" />
-                    <p >
+                    <img src="{{$article->image}}" alt="{{$article->Categorie->designation}}" />
+                    <p>
                         <?php echo $article->contenu ?>
                     </p>
                     <br>
