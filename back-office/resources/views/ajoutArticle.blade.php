@@ -10,7 +10,8 @@
         >
             Ajouter un nouveau article 
         </h2>
-        <form method="get" action="insertArticle">
+        <form method="post" action="insertArticle">
+        @csrf
         <div
                 class="px-4 py-3 mb-4 bg-white rounded-lg shadow-md dark:bg-gray-800"
         >

@@ -18,10 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('ajoutArticle',[ArticleController::class, 'ajoutArticlePage'])->name("pageAjoutArticle");
-Route::get('insertArticle',[ArticleController::class, 'ajoutArticle'])->name("AjoutArticle");
+Route::post('insertArticle',[ArticleController::class, 'ajoutArticle'])->name("AjoutArticle");
 Route::get('listeArticle',[ArticleController::class, 'liste'])->name("pageListeArticle");
 Route::get('/ficheArticle/{id}-{titre}',[ArticleController::class, 'fiche'])->name("ficheArticle");
 Route::get('modifArticle/{id}', [ArticleController::class, 'pageModif'])->name('modifArticle');
-Route::get('modificationArticle', [ArticleController::class, 'modification'])->name('modifierArticle');
+Route::post('modificationArticle', [ArticleController::class, 'modification'])->name('modifierArticle');
 Route::get('/', [LoginController::class, 'loginPage'])->name('pageLogin');
 Route::post('login', [LoginController::class, 'login'])->name('login');
