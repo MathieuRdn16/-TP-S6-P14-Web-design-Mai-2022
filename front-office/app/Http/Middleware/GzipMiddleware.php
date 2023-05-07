@@ -19,5 +19,5 @@ class GzipMiddleware
         $response->header('Content-Encoding','gzip');
       $response->setContent(gzencode($response->getContent(),9));
         return $response;
-}
+    }
 }
