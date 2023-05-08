@@ -17,4 +17,6 @@ use App\Http\Controllers\ArticleController;
 Route::middleware(['gzip'])->group(function(){
     Route::get('/',[ArticleController::class, 'liste'])->name("pageListeArticle");
     Route::get('/ficheArticle/{id}-{titre}',[ArticleController::class, 'fiche'])->name("ficheArticle");
+    Route::get('/search',[ArticleController::class, 'search'])->name("searchArticle");
+
 });

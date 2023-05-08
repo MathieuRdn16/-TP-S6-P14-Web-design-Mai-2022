@@ -28,5 +28,12 @@ class ArticleController extends Controller
         //    'article'=>Article::find($id)
         //]);
     }
+    public function search(Request $req){
+        $mot=$req->input('mots');
+        $liste=Article::where('titre','like','%'.$mot.'%')
+                                ->orWhere('resume','like','%'.$mot.'%')
+                                ->get();
+        return view('listeArticle',['listes'=>$liste]);
+    }
 
 }
