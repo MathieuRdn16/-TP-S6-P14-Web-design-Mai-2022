@@ -19,7 +19,7 @@ class ArticleController extends Controller
 	}
 
     public function fiche($id){
-        $find=Cache::remember('article',120,function () use($id){
+        $find=Cache::remember('article'.$id,120,function () use($id){
             return Article::find($id);
         });
         $response = response()->view('ficheArticle',['article'=>$find]);
