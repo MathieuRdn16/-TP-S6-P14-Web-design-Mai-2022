@@ -36,7 +36,8 @@ class ArticleController extends Controller
         $liste->whereRaw('lower(titre) like ?',['%'.$mot.'%'])
                                 ->orWhereRaw('lower(resume) like ?',['%'.$mot.'%'])
                                 ->get();
-        return view('listeArticle',['listes'=>$liste]);
+        dd($liste);                        
+        return viw('listeArticle',['listes'=>$liste]);
     }
     
 }
