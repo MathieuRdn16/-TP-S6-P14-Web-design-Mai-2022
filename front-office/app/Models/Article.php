@@ -52,7 +52,7 @@ class Article extends Model
 		return $sl;
 	}
 	public static function search($mots){
-        return DB::selectOne("select * from admin where lower(titre)='".$this->$mots."'or lower(resume)='".$mots."'");
+        return DB::selectOne("select * from article where lower(titre)='".$this->$mots."'or lower(resume)='".$mots."'");
         
     }
 }
