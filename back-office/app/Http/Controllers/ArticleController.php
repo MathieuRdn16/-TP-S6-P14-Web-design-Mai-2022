@@ -30,7 +30,7 @@ class ArticleController extends Controller
         $article->categorie=$idCat;
         $article->image=$image;
         $article->save();
-        return $this->liste();
+        return response()->redirectTo('listeArticle');
     }
     public function fiche($id){
         return view('ficheArticle',[
@@ -53,6 +53,12 @@ class ArticleController extends Controller
             'image'=>$req->input('image')
         ]);
         return $this->fiche($article->idarticle);
+    }
+
+    public function delete($id){
+        $article=Article::find($id);
+        $article->delete();
+        return response()->redirectTo('listeArticle');
     }
 
 }

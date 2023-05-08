@@ -21,6 +21,7 @@ Route::get('listeArticle',[ArticleController::class, 'liste'])->name("pageListeA
 Route::get('/ficheArticle/{id}-{titre}',[ArticleController::class, 'fiche'])->name("ficheArticle");
 Route::get('modifArticle/{id}', [ArticleController::class, 'pageModif'])->name('modifArticle');
 Route::post('modificationArticle', [ArticleController::class, 'modification'])->name('modifierArticle');
+Route::get('deleteArticle/{id}',[ArticleController::class, 'delete'])->name('deleteArticle');
 });
 
 Route::get('/', [LoginController::class, 'loginPage'])->name('pageLogin');
