@@ -33,7 +33,7 @@ class ArticleController extends Controller
         $mot=$req->input('mots');
         $mot =strtolower($mot);
         $liste=Article::with('categorie');
-        $liste->whereRaw('lower(titreg) like ?',['%'.$mot.'%'])
+        $liste->whereRaw('lower(titre) like ?',['%'.$mot.'%'])
                                 ->orWhereRaw('lower(resume) like ?',['%'.$mot.'%'])
                                 ->get();
         return view('listeArticle',['listes'=>$liste]);
