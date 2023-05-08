@@ -8,7 +8,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB;
 
 /**
  * Class Article
@@ -51,8 +50,4 @@ class Article extends Model
 		info($sl);
 		return $sl;
 	}
-	public static function search($mots){
-        return DB::select("select * from article where lower(titre)='".$mots."'or lower(resume)='".$mots."'")->get();
-        
-    }
 }

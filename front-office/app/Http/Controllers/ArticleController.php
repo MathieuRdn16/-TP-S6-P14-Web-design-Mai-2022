@@ -32,7 +32,10 @@ class ArticleController extends Controller
     public function search(Request $req){
         $mot=$req->input('mots');
         $mot =strtolower($mot);
-        $liste=Article::search($mot);
+        $liste=Article::whith('categorie')
+        ->whereRaw('lower(titre) like ?',['%'.$mot.'%'])
+                                ->orWhereRaw('lower(resume) like ?',['%'.$mot.'%'])
+                                ->get();
         return view('listeArticle',['listes'=>$liste]);
     }
     
